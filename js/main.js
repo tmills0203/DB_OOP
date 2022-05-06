@@ -1,3 +1,5 @@
+const h2 = document.querySelector("h2");
+
 // saiyan race
 class Saiyans {
   constructor(name, powerLvl, hairColor, eyeColor, hasTail, isAggressive) {
@@ -48,22 +50,22 @@ class family extends Saiyans {
     eyeColor,
     hasTail,
     isAggressive,
-    wife,
+    partner,
     children,
     specialMove
   ) {
     // from parent class
     super(name, powerLvl, hairColor, eyeColor, hasTail, isAggressive);
     // Goku own features
-    this._wife = wife;
+    this._partner = partner;
     this._children = children;
     this.specialMove = specialMove;
   }
 
   // family
 
-  get wife() {
-    return this._wife;
+  get partner() {
+    return this._partner;
   }
 
   get children() {
@@ -72,7 +74,11 @@ class family extends Saiyans {
 
   // about the character
 
-  bio() {}
+  bio() {
+    console.log(
+      `${this._name} is a saiyan whose partner is ${this.partner}, their children are ${this._children[0]} and ${this._children[1]}.`
+    );
+  }
 
   // special move
   techniques() {
@@ -91,6 +97,20 @@ const goku = new family(
   ["Gohan", "Goten"],
   "Kamehameha"
 );
-console.log(goku);
+
+const vegeta = new family(
+  "Vegeta",
+  "4.5 Billion  ",
+  "black",
+  "black",
+  "no tail",
+  "aggressive",
+  "Bulma",
+  ["Trunks", "Bulla"],
+  "Galick Gun"
+);
+console.log(vegeta);
 
 // Saiyan villans
+
+// display info on character in h2
