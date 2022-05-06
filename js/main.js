@@ -1,4 +1,9 @@
+const h1 = document.querySelector("h2");
 const h2 = document.querySelector("h2");
+const gokuImg = document.querySelector("#goku");
+const vegetaImg = document.querySelector("#vegeta");
+
+const imgArr = [gokuImg, vegetaImg];
 
 // saiyan race
 class Saiyans {
@@ -20,13 +25,11 @@ class Saiyans {
   }
 
   introduction() {
-    console.log(
-      `${this.name} is a saiyan with ${this.hairColor} hair, ${this.eyeColor} eyes, ${this.isAggressive} and has ${this.hasTail}.`
-    );
+    return `${this.name} is a saiyan with ${this.hairColor} hair, ${this.eyeColor} eyes, ${this.isAggressive} and has ${this.hasTail}.`;
   }
 
   powerLvl() {
-    console.log(`${this._name} has the power level of ${this._powerLvl}`);
+    return `${this._name} has the power level of ${this._powerLvl}`;
   }
 }
 
@@ -38,11 +41,10 @@ const bardock = new Saiyans(
   "tail",
   "aggressive"
 );
-console.log(bardock);
 
 // family of saiyans
 
-class family extends Saiyans {
+class Family extends Saiyans {
   constructor(
     name,
     powerLvl,
@@ -75,18 +77,16 @@ class family extends Saiyans {
   // about the character
 
   bio() {
-    console.log(
-      `${this._name} is a saiyan whose partner is ${this.partner}, their children are ${this._children[0]} and ${this._children[1]}.`
-    );
+    return `${this._name} is a saiyan whose partner is ${this.partner}, their children are ${this._children[0]} and ${this._children[1]}.`;
   }
 
   // special move
   techniques() {
-    console.log(`${this._name} signature move is ${this.specialMove}`);
+    return `${this._name} signature move is ${this.specialMove}`;
   }
 }
 
-const goku = new family(
+const goku = new Family(
   "Goku",
   "24 Billion  ",
   "black",
@@ -98,7 +98,7 @@ const goku = new family(
   "Kamehameha"
 );
 
-const vegeta = new family(
+const vegeta = new Family(
   "Vegeta",
   "4.5 Billion  ",
   "black",
@@ -109,8 +109,13 @@ const vegeta = new family(
   ["Trunks", "Bulla"],
   "Galick Gun"
 );
-console.log(vegeta);
 
 // Saiyan villans
 
 // display info on character in h2
+
+let saiyans = [goku, vegeta];
+
+imgArr.forEach((img) => {
+  img.addEventListener("click", () => {});
+});

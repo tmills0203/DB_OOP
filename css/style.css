@@ -3,19 +3,29 @@
 /*******************************************/
 
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-img{
-  display: block;
-  margin: 0 auto;
-}
 
+img {
+  margin-top: 5em;
+  width: 200px;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.saiyans {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
