@@ -1,10 +1,3 @@
-const h1 = document.querySelector("h2");
-const h2 = document.querySelector("h2");
-const gokuImg = document.querySelector("#goku");
-const vegetaImg = document.querySelector("#vegeta");
-
-const imgArr = [gokuImg, vegetaImg];
-
 // saiyan race
 class Saiyans {
   constructor(name, powerLvl, hairColor, eyeColor, hasTail, isAggressive) {
@@ -28,7 +21,7 @@ class Saiyans {
     return `${this.name} is a saiyan with ${this.hairColor} hair, ${this.eyeColor} eyes, ${this.isAggressive} and has ${this.hasTail}.`;
   }
 
-  powerLvl() {
+  scouter() {
     return `${this._name} has the power level of ${this._powerLvl}`;
   }
 }
@@ -112,10 +105,45 @@ const vegeta = new Family(
 
 // Saiyan villans
 
+class Villans extends Saiyans {
+  constructor(
+    name,
+    powerLvl,
+    hairColor,
+    eyeColor,
+    hasTail,
+    isAggressive,
+    specialMove
+  ) {
+    super(
+      name,
+      powerLvl,
+      hairColor,
+      eyeColor,
+      hasTail,
+      isAggressive,
+      specialMove
+    );
+    this.specialMove = specialMove;
+  }
+}
+const raditz = new Villans(
+  "Raditz",
+  "1600",
+  "black",
+  "black",
+  "a tail",
+  "aggressive",
+  "saturday crash"
+);
+const nappa = new Villans(
+  "Nappa",
+  "4000",
+  "no",
+  "black",
+  "a tail",
+  "aggressive",
+  "volcano explosion"
+);
+
 // display info on character in h2
-
-let saiyans = [goku, vegeta];
-
-imgArr.forEach((img) => {
-  img.addEventListener("click", () => {});
-});

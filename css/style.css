@@ -9,23 +9,43 @@
   margin: 0;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-
 img {
-  margin-top: 5em;
-  width: 200px;
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
 }
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+body {
+  background-color: #24282c;
+}
+
 .saiyans {
+  background-color: #f7f9f8;
+}
+.container {
+  max-width: 900px;
+  width: 100%;
+  padding: 4em;
+  margin: 5em auto;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-content: center;
-  gap: 10px;
+  align-items: center;
+  text-align: center;
+  gap: 87px;
+}
+
+.scouter {
+  position: relative;
+}
+
+.btn {
+  position: absolute;
+  right: 104px;
+  bottom: 99px;
+  z-index: 2;
+  padding: 0.5em;
+  background-color: red;
+  color: aliceblue;
+  font-size: larger;
   cursor: pointer;
 }
