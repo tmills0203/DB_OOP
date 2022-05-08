@@ -10,9 +10,11 @@
 }
 
 img {
-  height: 300px;
-  width: 300px;
-  object-fit: contain;
+  object-fit: cover;
+  width: 400px;
+  height: 307px;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
 }
 
 body {
@@ -23,7 +25,7 @@ body {
   background-color: #f7f9f8;
 }
 .container {
-  max-width: 900px;
+  display: flex;
   width: 100%;
   padding: 4em;
   margin: 5em auto;
@@ -34,6 +36,13 @@ body {
   gap: 87px;
 }
 
+.card-track {
+  width: 400px;
+  height: 307px;
+  overflow: hidden;
+  background-color: black;
+}
+
 .scouter {
   position: relative;
 }
@@ -41,7 +50,7 @@ body {
 .btn {
   position: absolute;
   right: 104px;
-  bottom: 99px;
+  bottom: 117px;
   z-index: 2;
   padding: 0.5em;
   background-color: red;

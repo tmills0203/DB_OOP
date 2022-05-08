@@ -147,3 +147,44 @@ const nappa = new Villans(
 );
 
 // display info on character in h2
+const btn = document.querySelector(".btn");
+const imgs = document.querySelectorAll(".card-track img");
+const track = document.querySelector(".card-track");
+const info = document.querySelector(".card-content");
+console.log(info);
+const powerLvl = document.querySelector(".power");
+
+let idx = 0;
+
+// interval through pic
+let interval = setInterval(run, 2000);
+
+// increase the index by 1
+function run() {
+  idx++;
+
+  // function that changes the img by the index
+  changeImage();
+}
+
+// changes the translate value
+function changeImage() {
+  // are we at the end of the node list?
+  if (idx > imgs.length - 1) {
+    //  go back to index 0
+    idx = 0;
+  } else if (idx < 0) {
+    //  check to see if we are at the beginning
+    idx = imgs.length;
+  }
+}
+btn.addEventListener("click", () => {
+  if (imgs[0] === idx) {
+    info.innerHTML = goku.bio();
+    powerLvl.innerHTML = goku._powerLvl;
+  } else if (imgs[1] === idx) {
+    info.innerHTML = vegeta.bio();
+    powerLvl.innerHTML = vegeta._powerLvl;
+  }
+  imgs.style.transform = `translateY(${-idx * 307}px)`;
+});
