@@ -1,3 +1,13 @@
+// display info on character in h2
+const imgs = document.querySelector("#imgs");
+const btn = document.querySelector(".btn");
+const h1 = document.querySelector(".info h1");
+const span = document.querySelector(".info span");
+const power = document.querySelector(".powerLvl");
+
+// gets specific index
+const img = document.querySelectorAll("#imgs img");
+
 // saiyan race
 class Saiyans {
   constructor(name, powerLvl, hairColor, eyeColor, hasTail, isAggressive) {
@@ -146,16 +156,6 @@ const nappa = new Villans(
   "volcano explosion"
 );
 
-// display info on character in h2
-const imgs = document.querySelector("#imgs");
-const btn = document.querySelector(".btn");
-const h1 = document.querySelector(".info h1");
-const span = document.querySelector(".info span");
-const power = document.querySelector(".powerLvl");
-
-// gets specific index
-const img = document.querySelectorAll("#imgs img");
-
 btn.addEventListener("click", run);
 
 // starts img index at index 0
@@ -166,7 +166,7 @@ let idx = 0;
 
 // increase the index by 1
 
-function run() {
+function info() {
   if (idx === 0) {
     h1.textContent = "Vegeta";
     span.textContent = vegeta.bio();
@@ -176,6 +176,10 @@ function run() {
     span.textContent = goku.bio();
     power.textContent = goku._powerLvl;
   }
+}
+
+function run() {
+  info();
   idx++;
 
   // function that changes the img by the index
