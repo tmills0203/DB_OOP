@@ -147,20 +147,35 @@ const nappa = new Villans(
 );
 
 // display info on character in h2
+const imgs = document.querySelector("#imgs");
 const btn = document.querySelector(".btn");
-const imgs = document.querySelectorAll(".card-track img");
-const track = document.querySelector(".card-track");
-const info = document.querySelector(".card-content");
-console.log(info);
-const powerLvl = document.querySelector(".power");
+const h1 = document.querySelector(".info h1");
+const span = document.querySelector(".info span");
+const power = document.querySelector(".powerLvl");
 
+// gets specific index
+const img = document.querySelectorAll("#imgs img");
+
+btn.addEventListener("click", run);
+
+// starts img index at index 0
 let idx = 0;
 
 // interval through pic
-let interval = setInterval(run, 2000);
+// let interval = setInterval(run, 2000);
 
 // increase the index by 1
+
 function run() {
+  if (idx === 0) {
+    h1.textContent = "Vegeta";
+    span.textContent = vegeta.bio();
+    power.textContent = vegeta._powerLvl;
+  } else if (idx === 1) {
+    h1.textContent = "Goku";
+    span.textContent = goku.bio();
+    power.textContent = goku._powerLvl;
+  }
   idx++;
 
   // function that changes the img by the index
@@ -170,21 +185,17 @@ function run() {
 // changes the translate value
 function changeImage() {
   // are we at the end of the node list?
-  if (idx > imgs.length - 1) {
+
+  if (idx > img.length - 1) {
     //  go back to index 0
     idx = 0;
   } else if (idx < 0) {
     //  check to see if we are at the beginning
-    idx = imgs.length;
+    idx = img.length;
   }
+
+  // beginning or at the end
+  // index times the width of the current 500 px
+
+  imgs.style.transform = `translateX(${-idx * 500}px)`;
 }
-btn.addEventListener("click", () => {
-  if (imgs[0] === idx) {
-    info.innerHTML = goku.bio();
-    powerLvl.innerHTML = goku._powerLvl;
-  } else if (imgs[1] === idx) {
-    info.innerHTML = vegeta.bio();
-    powerLvl.innerHTML = vegeta._powerLvl;
-  }
-  imgs.style.transform = `translateY(${-idx * 307}px)`;
-});

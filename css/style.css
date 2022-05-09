@@ -1,60 +1,62 @@
-/******************************************
-/* CSS
-/*******************************************/
-
-/* Box Model Hack */
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-img {
-  object-fit: cover;
-  width: 400px;
-  height: 307px;
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #24282c;
-}
-
-.saiyans {
-  background-color: #f7f9f8;
-}
-.container {
-  display: flex;
-  width: 100%;
-  padding: 4em;
-  margin: 5em auto;
+  background: rgb(184, 184, 184);
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  gap: 87px;
+  margin-top: 4em;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.card-track {
-  width: 400px;
-  height: 307px;
+img {
+  width: 500px;
+  height: 530px;
+  object-fit: cover;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+span {
+  font-size: 1.7rem;
+}
+.carousel {
+  height: 530px;
+  width: 500px;
   overflow: hidden;
-  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.img-container {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.info {
+  text-align: center;
 }
 
 .scouter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scouter img {
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
   position: relative;
 }
 
 .btn {
-  position: absolute;
-  right: 104px;
-  bottom: 117px;
-  z-index: 2;
-  padding: 0.5em;
-  background-color: red;
-  color: aliceblue;
-  font-size: larger;
+  color: rgb(236, 97, 16);
+  font-size: 1.6rem;
   cursor: pointer;
+  position: absolute;
+  top: 181px;
+  right: 343px;
 }
